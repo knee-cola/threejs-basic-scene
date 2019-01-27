@@ -9,9 +9,9 @@ Demo can be found at [https://knee-cola.github.io/threejs-basic-scene/](https://
 
 **Step 2:** install by typing `npm i` to your console
 
-**Step 2:** use the `main.js` as a starting point. You can replace the sphere with objects of your own.
+**Step 3:** use the `main.js` as a starting point. You can replace the sphere with objects of your own.
 
-**Step 3:** run it via `npm start`
+**Step 4:** run it via `npm start`
 
 # API
 Public methods are:
