@@ -1,6 +1,9 @@
 # Whats this?
 This is a basic ThreeJS scene boilerplate intended to be used as a starting point for any ThreeJS experiment.
 
+# Demo
+Demo can be found at [https://knee-cola.github.io/threejs-basic-scene/](https://knee-cola.github.io/threejs-basic-scene/). It's a basic scene, so don't expect much!
+
 # How to use
 **Step 1:** Fork it, clone it or download it.
 
