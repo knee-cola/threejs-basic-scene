@@ -2,7 +2,7 @@ import { BasicScene } from "./components/BasicScene";
 import { Mesh, SphereGeometry, MeshPhongMaterial, SmoothShading } from "three";
 
 const basicScene = new BasicScene();
-basicScene.ShowGrid();
+basicScene.showGrid();
 
 const speherRadius = 50,
     sphere_H_segments = 64,
