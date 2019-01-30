@@ -19,8 +19,7 @@
   },
   "scripts": {
     "watch": "webpack --watch",
-    "start": "npm run build && node ./server/ws-server.js",
-    "build": "webpack"
+    "serve": "node ./server/ws-server.js"
   },
   "author": "Nikola Derežić",
   "license": "ISC"

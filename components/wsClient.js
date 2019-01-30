@@ -2,7 +2,7 @@ import {log} from './logger';
 
 export const initWsClient = () => {
                 
-    const wsClient = new WebSocket('ws://localhost:1337');
+    const wsClient = new WebSocket('ws://localhost:8080');
 
     wsClient.onopen = function () {
         // connection is opened and ready to use

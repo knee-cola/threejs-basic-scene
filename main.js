@@ -12,24 +12,6 @@ let mobileDeviceOrientation = {
     gamma: 0
 };
 
-/*
-const speherRadius = 50,
-sphere_H_segments = 64,
-sphere_V_segments = 64,
-sphere = new Mesh(
-    new SphereGeometry(speherRadius, sphere_H_segments, sphere_V_segments),
-    new MeshPhongMaterial({
-        color: 0x3794cf,
-        specular: 0xffffff,
-        shininess: 40,
-        flatShading: SmoothShading
-    })
-    );
-    
-sphere.castShadow = true;
-basicScene.add(sphere);
-*/
-
 var origin = new Vector3( 0, -200, 0 );
 
 var dir = new Vector3( 0, 0, 0 );
@@ -53,7 +35,6 @@ wsClient.onmessage = function (message) {
         gamma: Math.degToRad(gamma)
     };
 };
-
 
 basicScene.onAnimationFrame(() => {
     // https://www.learnthreejs.com/device-orientation-gyroscope-controls-tutorial/
