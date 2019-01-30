@@ -1,21 +1,12 @@
 # Whats this?
-This is a basic ThreeJS scene boilerplate intended to be used as a starting point for any ThreeJS experiment.
+This is a fork of the original project.
 
-# Demo
-Demo can be found at [https://knee-cola.github.io/threejs-basic-scene/](https://knee-cola.github.io/threejs-basic-scene/). It's a basic scene, so don't expect much!
+This solution consists of two pages:
+* mobile one delivering phone orientation data via web socket
+* desktop one displaying 3D scene with an arrow pointing in the same direction as the phone in real time
 
 # How to use
-**Step 1:** Fork it, clone it or download it.
-
-**Step 2:** install by typing `npm i` to your console
-
-**Step 3:** use the `main.js` as a starting point. You can replace the sphere with objects of your own.
-
-**Step 4:** run it via `npm start`
-
-# API
-Public methods are:
-
-* `add` = adds a new 3D object to the scene (i.e. THREE.Mesh)
-* `showGrid` = a helper function which displays a reference grid
-* `onAnimationFrame` = registers an function which will be called from the animation loop before the `render` is done - useful for updating objects on the screen (animation)
+**Step 1:** run `npm start`
+**Step 2:** in a web browser on your **desktop** machine open the address displayed in the console and click on the "Desktop page" link
+**Step 3:** in a web browser on your **cell phone** open open the address displayed in the console and click on the "Mobile page" link
+**Step 6:** move your phone and watch the arrow move on your desktop
