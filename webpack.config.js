@@ -10,7 +10,7 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     contentBase: './docs',
-    host: 'localhost', // listen on all IP addresses
+    host: '0.0.0.0', // listen on all IP addresses
     port: 8080
   },
 };
