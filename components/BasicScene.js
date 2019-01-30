@@ -38,9 +38,9 @@ export class BasicScene {
 			near = 1,
 			far = 2000,
             cameraPosition = {
-                x: 500,
+                x: 400,
                 y: 0,
-                z: 500
+                z: 400
             };
 
 		// http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera
@@ -64,6 +64,7 @@ export class BasicScene {
     setupControls() {
         const controls = this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         controls.damping = 0.2;
+        controls.enableZoom = true;
     }
 
     startAnimationLoop() {
@@ -145,12 +146,12 @@ export class BasicScene {
         planeMaterial.opacity = 0.2;
         
         const plane = new Mesh( planeGeometry, planeMaterial );
-        plane.position.y = -200;
+        plane.position.y = -2;
         plane.receiveShadow = true;
         scene.add( plane );
         
         const helper = new GridHelper( 1000, 100 );
-        helper.position.y = - 199;
+        helper.position.y = -3;
         helper.material.opacity = 0.25;
         helper.material.transparent = true;
         scene.add( helper );

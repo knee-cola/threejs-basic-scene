@@ -36,15 +36,23 @@
                     log('received message: ' + message.data);
                 };
 
+                let _deviceOrientation = {};
+
                 window.addEventListener( 'deviceorientation', ev => {
-                    const {alpha, beta, gamma} = event;
+                    _deviceOrientation = event;
+                }, false );
+
+                window.addEventListener( 'orientationchange', ev => {
+                    const {alpha, beta, gamma} = _deviceOrientation;
                     const msg = JSON.stringify({type:"device-orientation-change", data: {alpha, beta, gamma} });
                     wsClient.send(msg);
                 }, false );
 
-                window.addEventListener( 'orientationchange', ev => {
-                    wsClient.send(JSON.stringify({type:"screen-orientation-change", data: window.orientation || 0 }));
-                }, false );
+                window.setInterval(() => {
+                    const {alpha, beta, gamma} = _deviceOrientation;
+                    const msg = JSON.stringify({type:"device-orientation-change", data: {alpha, beta, gamma} });
+                    wsClient.send(msg);
+                }, 100);
             };
 
             const logOutput = document.getElementById('logOutput');
