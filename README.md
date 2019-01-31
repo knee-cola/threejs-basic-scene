@@ -26,7 +26,7 @@ Phone has three rotational axes: **x** and **y** are defined relative to the scr
 * **z-axes** is equal to the earth's vertical axes, positive extending away from the earth's center
 
 ## Alpha angle
-**Alpha** angle describes rotation around the (gravitational) **vertical** axes (y-axes) relative to the earth's north pole
+**Alpha** angle describes rotation around the (gravitational) **vertical** axes (z-axes) relative to the earth's north pole
 * **min value** = 0 (when top of the phone if pointing in the direction of the north pole)
 * **mid value** = PI - (when top of the phone if pointing in the direction of the south pole)
 * **max value** = 2 * PI (same as min value)
@@ -35,7 +35,7 @@ Phone has three rotational axes: **x** and **y** are defined relative to the scr
 **NOTE:** angle **alpha** does not contain enough information to determin if the screen is facing up or down. This information is contained in the **gamma** angle.
 
 ## Beta angle
-**Beta** angle describes rotation around **longer edge** (z-axes) of the phone
+**Beta** angle describes rotation around **longer edge** (y-axes) of the phone
 * when screen is facing UP
 * **0** - screen is facing up
 * **-PI/2** - screen is vertical with it's left edge being above the right one
