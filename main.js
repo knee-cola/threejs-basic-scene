@@ -27,8 +27,6 @@ wsClient.onmessage = function (message) {
 const scene = basicScene.scene;
 
 const oHelper = new DeviceOrientationHelper(scene);
-const zyHelper = new AxesComponentHelper({scene, origin:{x:-5, y:5,z:-10}, length:1});
-const xyHelper = new AxesComponentHelper({scene, origin:{x:0, y:5,z:-10}, length:1});
 const alphaBetaHelper = new AxesComponentHelper({scene, origin:{x:5, y:5,z:-10}, length:.5});
 const alphaGammaHelper = new AxesComponentHelper({scene, origin:{x:10, y:5,z:-10}, length:.5});
 
@@ -54,8 +52,6 @@ basicScene.onAnimationFrame(() => {
     const newDir = oHelper.direction;
 
     // these helpers follow the camera
-    zyHelper.update({...newDir, x:newDir.z, z:0}, basicScene.camera);
-    xyHelper.update({...newDir,z:0}, basicScene.camera);
     alphaBetaHelper.update({x: alpha, y: beta, z: 0}, basicScene.camera);
     alphaGammaHelper.update({x: alpha, y: gamma, z: 0}, basicScene.camera);
 });
