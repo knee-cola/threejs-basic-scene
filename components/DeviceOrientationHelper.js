@@ -51,8 +51,8 @@ export class DeviceOrientationHelper {
 
         this.euler.set( beta, alpha, - gamma, 'YXZ' ); // 'ZXY' for the device, but 'YXZ' for us
         this.quaternion.setFromEuler( this.euler ); // orient the device
-        this.quaternion.multiply( this.q1 ); // camera looks out the back of the device, not the top
-        this.quaternion.multiply( this.q0.setFromAxisAngle( this.zee, -orient ) ); // adjust for screen orientation
+        // this.quaternion.multiply( this.q1 ); // camera looks out the back of the device, not the top
+        // this.quaternion.multiply( this.q0.setFromAxisAngle( this.zee, -orient ) ); // adjust for screen orientation
 
         // applying new direction
         this.direction.applyQuaternion(this.quaternion);

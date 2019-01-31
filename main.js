@@ -3,6 +3,7 @@ import { initWsClient } from './components/wsClient';
 import { Vector3, Math as ThreeMath } from "three";
 import { AxesComponentHelper } from "./components/AxesComponentHelper";
 import { DeviceOrientationHelper } from "./components/DeviceOrientationHelper";
+import { ColladaElf } from "./components/ColladaElf";
 
 const basicScene = new BasicScene();
 basicScene.showGrid();
@@ -31,6 +32,8 @@ const oHelperQuaternion = new DeviceOrientationHelper(scene, {color: 0x00AEB7, l
 const alphaBetaHelper = new AxesComponentHelper({scene, origin:{x:5, y:5,z:-10}, length:.5});
 const alphaGammaHelper = new AxesComponentHelper({scene, origin:{x:10, y:5,z:-10}, length:.5});
 
+const elf = new ColladaElf(scene);
+
 const infoBox = document.getElementById('info');
 
 const formatNumber = number => {
@@ -50,6 +53,8 @@ basicScene.onAnimationFrame(() => {
 
     oHelperQuaternion.updateViaQuaternion(_mobileDeviceOrientation);
     oHelperEuler.updateViaEuler(_mobileDeviceOrientation);
+
+    elf.updateQuaternion(oHelperQuaternion.quaternion);
 
     // these helpers follow the camera
     alphaBetaHelper.update({x: alpha, y: beta, z: 0}, basicScene.camera);

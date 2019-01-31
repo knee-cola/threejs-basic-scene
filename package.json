@@ -8,6 +8,7 @@
     "ip": "^1.1.5",
     "npm": "^6.7.0",
     "three": "^0.100.0",
+    "three-collada-loader": "0.0.1",
     "three-gltf-loader": "^1.100.0",
     "threejs-orbit-controls": "^1.0.3",
     "websocket": "^1.0.28"
