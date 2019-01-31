@@ -19,6 +19,7 @@
   },
   "scripts": {
     "watch": "webpack --watch",
+    "build": "webpack",
     "serve": "node ./server/ws-server.js"
   },
   "author": "Nikola Derežić",
