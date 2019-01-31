@@ -36,11 +36,11 @@ export class AxesComponentHelper {
         if(camera) {
             line.position.copy( camera.position );
             line.rotation.copy( camera.rotation );
-    
-            line.translateX( origin.x );
-            line.translateY( origin.y );
-            line.translateZ( origin.z );
         }
+
+        line.translateX( origin.x );
+        line.translateY( origin.y );
+        line.translateZ( origin.z );
 
         line.geometry.vertices[1][axes] = value * length;
         line.geometry.verticesNeedUpdate = true;
