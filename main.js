@@ -32,10 +32,22 @@ const xyHelper = new AxesComponentHelper({scene, origin:{x:0, y:5,z:-10}, length
 const alphaBetaHelper = new AxesComponentHelper({scene, origin:{x:5, y:5,z:-10}, length:.5});
 const alphaGammaHelper = new AxesComponentHelper({scene, origin:{x:10, y:5,z:-10}, length:.5});
 
+const infoBox = document.getElementById('info');
+
+const formatNumber = number => {
+    number = Math.round(number*100)/100;
+    if(number<0) {number=number+'';} else {number=' '+number;}
+    number = number+'.00'.substr(0,5-number.length);
+
+    return(number);
+}
+
 basicScene.onAnimationFrame(() => {
     // https://www.learnthreejs.com/device-orientation-gyroscope-controls-tutorial/
     
     const {alpha, beta, gamma} = _mobileDeviceOrientation;
+
+    infoBox.innerHTML = `alpha:${formatNumber(alpha)}<br/>beta:${formatNumber(beta)}<br/>gamma:${formatNumber(gamma)}`;
 
     oHelper.update(_mobileDeviceOrientation);
 
