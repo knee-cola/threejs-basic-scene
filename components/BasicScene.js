@@ -38,9 +38,9 @@ export class BasicScene {
 			near = 1,
 			far = 2000,
             cameraPosition = {
-                x: 400,
+                x: 100,
                 y: 0,
-                z: 400
+                z: 0
             };
 
 		// http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera
