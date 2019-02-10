@@ -4,7 +4,6 @@ import formatNumber from './formatNumber';
 export class VectorArrow {
     constructor({scene}) {
         this.length = 1;
-
         
         this.worldFront = this.makeLine(scene, 0xaaaaaa, new Vector3(this.length, 0, 0));
         this.cameraFront = this.makeLine(scene, 0x0000ff, new Vector3(this.length, 0, 0));
@@ -52,7 +51,6 @@ export class VectorArrow {
         scene.add(line);
         return(line);
     }
-
 
     update({alpha, beta, gamma}) {
         this.euler.set( beta, alpha, - gamma, 'YXZ' ); // 'ZXY' for the device, but 'YXZ' for us

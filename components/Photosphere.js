@@ -1,4 +1,5 @@
 import { Mesh, RepeatWrapping, SphereGeometry, MeshBasicMaterial, BackSide, Matrix4, TextureLoader, Quaternion, Vector3, Euler} from 'three';
+import { PitchYawRollHelper } from '../helpers/PitchYawRollHelper';
 
 const _sphere_radius = 100,
       _sphere_H_segments = 64,
@@ -10,21 +11,12 @@ export class Photosphere {
         this.scene = scene;
 		this.renderer = renderer;
 		this.scale = 5;
-
-		this.worldFront = new Vector3(1,0,0);
-		this.sphereFront = new Vector3();
-		
-		this.worldTop = new Vector3(0,1,0);
-		this.sphereTop = new Vector3(0,1,0);
-
-		this.euler = new Euler();
-		this.q0 = new Quaternion();
-		this.q1 = new Quaternion();
-		// this.q1 = new Quaternion( 0, 0, - Math.sqrt( 0.5 ),  Math.sqrt( 0.5 ) ); // - PI/2 around the x-axis
 		
 		//this.deformMatrix = new Matrix4();
 		this.makeSphere();
 		this.loadTexture();
+
+		this.pyrHelper = new PitchYawRollHelper();
 	}
 	
 	makeSphere() {
@@ -101,25 +93,7 @@ export class Photosphere {
 		this.sphereMesh.matrix.multiply(this.deformMatrix);
 	}
 
-	update({alpha, beta, gamma}) {
-
-		this.euler.set( alpha, beta, gamma ); // 'ZXY' for the device, but 'YXZ' for us
-
-        this.sphereFront.set(1,0,0);
-		this.sphereFront.applyEuler(this.euler);
-		this.q0.setFromUnitVectors(this.sphereFront, this.worldFront);
-		
-		// this.sphereTop.set(0,1,0);
-		// this.sphereTop.applyEuler(this.euler);
-		// 
-		// this.sphereTop.applyQuaternion(this.q0);
-		// this.q1.setFromUnitVectors(this.sphereTop, this.worldTop);
-
-		this.quaternion.copy( this.q0 );
-	}
-
-	updateQuaternion(q0, q1) {
-		q1.multiply(q0);
-		this.quaternion.copy( q1 );
+	update(deviceOrientation) {
+		this.quaternion.copy(this.pyrHelper.calculate(deviceOrientation));
 	}
 }
