@@ -38,14 +38,16 @@ export class BasicScene {
 			near = 1,
 			far = 2000,
             cameraPosition = {
-                x: 200,
+                x: -200,
                 y: 0,
                 z: 0
             };
 
 		// http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera
 		this.camera = new PerspectiveCamera(fieldOfView, aspectRatio, near, far);
-		this.camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z);
+        this.camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z);
+        
+        this.camera.lookAt(0,0,0);
     }
 
     setupLight() {
