@@ -38,7 +38,7 @@ export class BasicScene {
 			near = 1,
 			far = 2000,
             cameraPosition = {
-                x: 100,
+                x: 200,
                 y: 0,
                 z: 0
             };

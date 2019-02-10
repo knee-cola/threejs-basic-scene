@@ -27,7 +27,7 @@ export class Photosphere {
 				// color: 0xff0000,
 				flatShading: true,
 				// draw texture on inner side of the sphere
-				side: BackSide
+				//side: BackSide
 			})
 
 		);
